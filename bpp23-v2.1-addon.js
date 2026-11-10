@@ -34,11 +34,31 @@
   const search=document.getElementById('search');
   const count=document.getElementById('count');
   const toolbar=document.querySelector('.toolbar');
-  const filter=document.createElement('button');filter.textContent='ผลิตภัณฑ์โรงเรียน ตชด.';filter.style.cssText='border-radius:999px;padding:10px 16px;margin:8px;background:#e8f2f5;color:#16465a;border:0;cursor:pointer';
+  const filter=document.createElement('button');
+  filter.textContent='Prompt ส่งเสริมผลิตภัณฑ์โรงเรียน ตชด.';
+  filter.style.cssText='border-radius:999px;padding:10px 16px;background:#cfdee5;color:#123c50;border:1px solid #a9c2cd;cursor:pointer;font-weight:650';
+  const filterBox=document.getElementById('filters');
   let only=false;
-  filter.onclick=()=>{only=!only;filter.style.background=only?'#126b86':'#e8f2f5';filter.style.color=only?'white':'#16465a';refresh()};
-  if(toolbar)toolbar.after(filter);
-  function refresh(){const q=(search?.value||'').trim().toLocaleLowerCase('th');let visible=0;for(const x of cards){const yes=x.text.includes(q);x.article.hidden=!yes;if(yes)visible++}section.hidden=visible===0;host.style.display=only?'none':'';if(count&&only)count.textContent='พบ '+visible+' คำสั่ง จากหมวดผลิตภัณฑ์โรงเรียน ตชด. • เลือกได้ 2 ระดับ';else if(count)count.textContent='คลังคำสั่ง 12 รายการ (เดิม 6 + ใหม่ 6) • เลือกได้ 2 ระดับ'}
+  if(filterBox)filterBox.append(filter);
+  function refresh(){
+    const q=(search?.value||'').trim().toLocaleLowerCase('th');
+    let visible=0;
+    for(const x of cards){const yes=x.text.includes(q);x.article.hidden=!yes;if(yes)visible++}
+    section.hidden=visible===0;
+    host.style.display=only?'none':'';
+    filter.style.background=only?'#126782':'#cfdee5';
+    filter.style.color=only?'#fff':'#123c50';
+    filter.style.borderColor=only?'#126782':'#a9c2cd';
+    filter.classList.toggle('active',only);
+    if(count&&only)count.textContent='พบ '+visible+' คำสั่ง จากหมวดผลิตภัณฑ์โรงเรียน ตชด. • เลือกได้ 2 ระดับ';
+    else if(count)count.textContent='คลังคำสั่ง 12 รายการ (เดิม 6 + ใหม่ 6) • เลือกได้ 2 ระดับ';
+  }
+  filter.onclick=()=>{only=!only;refresh()};
+  if(filterBox){
+    filterBox.addEventListener('click',e=>{
+      if(e.target!==filter && e.target.closest('button')){only=false;setTimeout(refresh,0)}
+    });
+  }
   search?.addEventListener('input',()=>setTimeout(refresh,0));
   document.title='BPP23 AI Prompt Library v2.1';
   const version=document.querySelector('header h1 small');if(version)version.textContent='v2.1';
