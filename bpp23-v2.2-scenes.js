@@ -35,7 +35,7 @@
     copy.textContent=ok?'✓ คัดลอกแล้ว':'ไม่สามารถคัดลอกได้ โปรดเลือกข้อความด้านบน';
     setTimeout(()=>copy.textContent='📋 คัดลอก Prompt พร้อมฉาก',2000);
   });
-  document.title='BPP23 AI Prompt Library v2.2';
-  const version=document.querySelector('header h1 small');if(version)version.textContent='v2.2';
+  document.title='BPP23 AI Prompt Library v2.3';
+  const version=document.querySelector('header h1 small');if(version)version.textContent='v2.3';
   update();
 })();
