@@ -31,6 +31,26 @@
     function setMode(m){mode=m;prompt.textContent=m==='basic'?basic:fullMaster;levels.querySelectorAll('button').forEach(b=>b.className=b.dataset.mode===m?'active':'');copy.textContent='📋 คัดลอก '+(m==='basic'?'Prompt พื้นฐาน':'Master Prompt')}
     for(const [m,name] of [['basic','Prompt พื้นฐาน'],['master','Master Prompt ฉบับละเอียด']]){const b=document.createElement('button');b.dataset.mode=m;b.textContent=name;b.onclick=()=>setMode(m);levels.append(b)}
     copy.onclick=async()=>{const value=mode==='basic'?basic:fullMaster;try{await navigator.clipboard.writeText(value);copy.textContent='✓ คัดลอกแล้ว'}catch(e){const t=document.createElement('textarea');t.value=value;document.body.append(t);t.select();document.execCommand('copy');t.remove();copy.textContent='✓ คัดลอกแล้ว'}setTimeout(()=>setMode(mode),1500)};
+    if(title==='ออกแบบโปสเตอร์แปลงเกษตรจากภาพถ่ายจริง'){
+      const example=document.createElement('figure');
+      example.style.cssText='margin:18px 0 0;padding:14px;border:1px solid #dbe6eb;border-radius:14px;background:#f6f9fb;text-align:center';
+      const image=document.createElement('img');
+      image.src='./assets/school-agriculture-poster-example.jpg';
+      image.alt='ภาพตัวอย่างโปสเตอร์แปลงเกษตรโรงเรียนตำรวจตระเวนชายแดนช่างกลปทุมวันอนุสรณ์8';
+      image.loading='lazy';
+      image.style.cssText='display:block;width:100%;max-width:430px;height:auto;margin:0 auto;border-radius:10px';
+      const caption=document.createElement('figcaption');
+      caption.style.cssText='font-size:14px;line-height:1.7;color:#526778;margin-top:10px';
+      caption.textContent='ภาพตัวอย่างการออกแบบด้วย AI • ภาพผลผลิตจำลอง ไม่ใช่หลักฐานการเก็บเกี่ยวจริง • โปรดตรวจสอบตราและข้อความก่อนเผยแพร่';
+      const missing=document.createElement('p');
+      missing.className='desc';
+      missing.textContent='กำลังรอไฟล์ภาพตัวอย่างสำหรับแสดงบนเว็บไซต์';
+      missing.hidden=true;
+      image.onerror=()=>{image.hidden=true;missing.hidden=false};
+      image.onload=()=>{image.hidden=false;missing.hidden=true};
+      example.append(image,missing,caption);
+      article.append(example);
+    }
     article.append(label,heading,p,levels,prompt,copy);section.append(article);cards.push({article,text:[title,desc,basic,fullMaster].join(' ').toLocaleLowerCase('th')});setMode('basic');
   }
   host.after(section);
