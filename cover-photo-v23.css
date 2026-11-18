@@ -1,1 +1,2 @@
 .bpp-cover{max-width:950px;margin:0 auto 24px;border-radius:22px;overflow:hidden;box-shadow:0 14px 36px #29235e35;border:1px solid #fff8}.bpp-cover[hidden]{display:none}.bpp-cover img{display:block;width:100%;height:auto}@media(max-width:540px){.bpp-cover{border-radius:16px;margin-bottom:18px}}
+.bpp-cover-cta{display:block;width:min(100%,360px);margin:-5px auto 18px;padding:13px 22px;border:1px solid #e7c4ff;border-radius:999px;background:linear-gradient(110deg,#5930b5,#a32fe2);color:#fff;font-weight:800;box-shadow:0 8px 18px #6234b355;scroll-margin-top:15px}
