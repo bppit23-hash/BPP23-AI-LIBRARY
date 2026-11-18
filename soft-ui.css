@@ -1,0 +1,22 @@
+/* BPP23 Soft UI theme — non-destructive visual enhancement */
+:root{color-scheme:light;--navy:#101e52;--purple:#7433c9;--lavender:#e6e7ff}
+body{background:linear-gradient(160deg,#c4c9ef 0%,#e9edff 44%,#d7dffa 100%);color:#18234f}
+header{position:relative;overflow:hidden;background:radial-gradient(circle at 83% 10%,#8e4bf1 0,transparent 33%),linear-gradient(115deg,#0c1945,#263b87 58%,#35216d);border-bottom:3px solid #b59cff;box-shadow:0 13px 30px #26236945}
+header:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 120%,#75a5ff50,transparent 45%)}
+header>*{position:relative}
+header h1{font-weight:850;letter-spacing:-.025em;text-shadow:0 3px 12px #0006}
+header strong{color:#ffe08b}
+main{max-width:1100px}
+.toolbar,.card{background:linear-gradient(145deg,#f7f8ff,#dfe4fb);border:1px solid #fff;border-radius:26px;box-shadow:9px 11px 23px #59659c55,-8px -8px 20px #ffffffcc}
+.toolbar{padding:25px}
+input{background:#edf0ff;border:1px solid #d1d8f3;border-radius:999px;box-shadow:inset 5px 5px 10px #a8b1d36b,inset -5px -5px 10px #fff;padding:17px 22px;color:#162353;outline-offset:3px}
+input:focus{border-color:#8247dc;outline:2px solid #a17aff}
+button{background:linear-gradient(145deg,#f8f8ff,#d8defa);color:#273063;border:1px solid #ffffffd9;box-shadow:4px 5px 10px #6472a44d,-3px -3px 9px #fff;transition:transform .16s,box-shadow .16s}
+button:hover{transform:translateY(-2px);box-shadow:5px 8px 14px #5c64a65c,-3px -3px 9px #fff}
+button:focus-visible{outline:3px solid #b078ff;outline-offset:2px}
+button.active,.copy{background:linear-gradient(125deg,#4735a9,#9a34e2);color:white;border-color:#bda3ff;box-shadow:0 6px 14px #6533a877}
+.category{color:#5e2da5}.card h2{color:#192454}.desc,.meta,.notice{color:#425173}
+.prompt{background:#e9edff;border:1px solid #cfd5f1;border-radius:18px;box-shadow:inset 4px 4px 9px #a7b0d65c,inset -4px -4px 10px #fff}
+footer{color:#34416e}
+@media(max-width:600px){header{padding:28px 20px 34px}.toolbar,.card{border-radius:20px;padding:17px}main{padding:19px 13px 45px}input{font-size:16px}}
+@media(prefers-reduced-motion:reduce){button{transition:none}}
