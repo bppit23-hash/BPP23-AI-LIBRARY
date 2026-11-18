@@ -1,0 +1,20 @@
+/* BPP23 dashboard v2.3, responsive additions */
+:root{--bpp-ink:#14204b}
+body{background:linear-gradient(180deg,#b8b9e8,#e8eaff 38%,#dbe1fb)}
+header{padding-bottom:24px}
+main{max-width:1150px;padding-top:18px}
+.bpp-topnav{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:0 0 18px}
+.bpp-topnav button{font-weight:750;font-size:14px;background:linear-gradient(140deg,#fff,#dcd9ff);border-radius:15px}
+.bpp-hero{position:relative;isolation:isolate;display:flex;justify-content:space-between;align-items:center;min-height:270px;overflow:hidden;padding:32px clamp(22px,5vw,56px);border-radius:30px;color:white;background:radial-gradient(circle at 80% 28%,#9d4bff 0%,transparent 33%),linear-gradient(115deg,#111d55,#243b8d 55%,#472275);border:2px solid #d6b8ff;box-shadow:0 14px 30px #32357c6e;margin-bottom:24px}
+.bpp-hero:before{content:"";position:absolute;inset:auto -10% -90px;z-index:-1;height:160px;border-radius:50%;border:18px solid #8f5dff77;transform:rotate(-5deg)}
+.bpp-hero-copy{position:relative;z-index:1}.bpp-eyebrow{color:#ffe59c;font-weight:750}.bpp-hero h2{font-size:clamp(30px,5vw,62px);line-height:1.08;letter-spacing:-.04em;margin:12px 0;text-shadow:0 5px 10px #0007}.bpp-hero h2 span{color:#e7d3ff;text-shadow:0 0 18px #ce72ff}.bpp-hero p{font-size:clamp(14px,2vw,18px);max-width:480px;line-height:1.6}.bpp-version{display:inline-block;border-radius:999px;background:#863bdf;border:1px solid #e8c5ff;padding:7px 16px;font-weight:800;box-shadow:0 0 15px #ad60ff}
+.bpp-robot{font-size:clamp(90px,16vw,180px);filter:drop-shadow(0 12px 15px #0006);line-height:1}
+.bpp-section-title{font-size:clamp(20px,3vw,28px);margin:25px 4px 17px;color:var(--bpp-ink)}
+.bpp-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:30px}
+.bpp-tile{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;min-height:125px;padding:15px 9px;text-align:center;background:linear-gradient(145deg,#f8f7ff,#d6d9fb);border:2px solid #fff;border-radius:23px;box-shadow:7px 9px 17px #4f55965e,-5px -5px 14px #fff}
+.bpp-tile span{font-size:34px}.bpp-tile strong{font-size:15px;line-height:1.4}.bpp-tile:last-child{background:linear-gradient(140deg,#7230c1,#a34bec);color:white;border-color:#e8c0ff}
+.bpp-school-filter{background:linear-gradient(120deg,#6d2cc1,#a344e5)!important;color:white!important;border-color:#ddafff!important}
+.bpp-community{margin:35px 0 25px;padding:22px 28px;border-radius:25px;color:#fff;background:linear-gradient(110deg,#39206d,#6634b3,#37276d);box-shadow:0 9px 25px #4b29967d;border:2px solid #bfa2ff}
+.bpp-community strong{font-size:23px}.bpp-community p{line-height:1.6;margin-bottom:0}
+@media(max-width:700px){.bpp-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.bpp-hero{min-height:220px;padding:24px 18px;border-radius:23px}.bpp-robot{font-size:74px}.bpp-hero h2{font-size:34px}.bpp-topnav button{font-size:13px;padding:9px 11px}.bpp-tile{min-height:110px}.bpp-community strong{font-size:19px}}
+@media(max-width:380px){.bpp-robot{font-size:52px}.bpp-hero h2{font-size:28px}}
