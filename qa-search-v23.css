@@ -1,0 +1,11 @@
+/* Accessible visual polish: search controls and category cards */
+.bpp-search-wrap{position:relative}
+.bpp-search-wrap input{padding-right:112px}
+.bpp-clear-search{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:13px;padding:9px 11px;border-radius:999px;background:#ede5ff;color:#402278;box-shadow:0 2px 7px #413a6e33}
+.bpp-clear-search[hidden]{display:none}
+.bpp-tile{position:relative}
+.bpp-tile span{display:grid;place-items:center;width:59px;height:59px;border-radius:19px;background:linear-gradient(135deg,#fff,#c5d1ff);box-shadow:4px 5px 12px #4e55905e,inset 2px 2px 4px #fff;font-size:34px}
+.bpp-tile:last-child span{background:linear-gradient(140deg,#e7b7ff,#9b51d6)}
+.bpp-tile-active{outline:3px solid #7440d3;outline-offset:2px}
+.bpp-tile:focus-visible{outline:3px solid #7440d3;outline-offset:3px}
+@media(max-width:600px){.bpp-search-wrap input{padding-right:105px}.bpp-tile span{width:52px;height:52px;font-size:29px}.bpp-tile{padding:13px 7px}}
