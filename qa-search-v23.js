@@ -1,0 +1,8 @@
+/* Progressive enhancements: preserve original search, filters, and copy actions. */
+(()=>{const input=document.getElementById('search'),toolbar=document.querySelector('.toolbar'),count=document.getElementById('count');if(!input||!toolbar)return;
+const wrap=document.createElement('div');wrap.className='bpp-search-wrap';input.parentNode.insertBefore(wrap,input);wrap.append(input);
+const clear=document.createElement('button');clear.type='button';clear.className='bpp-clear-search';clear.textContent='ล้างคำค้น';clear.setAttribute('aria-label','ล้างข้อความค้นหา');clear.hidden=true;clear.addEventListener('click',()=>{input.value='';input.dispatchEvent(new Event('input',{bubbles:true}));input.focus()});wrap.append(clear);
+const sync=()=>{clear.hidden=!input.value;};input.addEventListener('input',sync);sync();
+if(count){count.setAttribute('role','status');count.setAttribute('aria-live','polite');}
+const tiles=document.getElementById('bpp-categories');const filters=document.getElementById('filters');if(tiles&&filters){const syncTile=()=>{const active=[...filters.querySelectorAll('button.active')][0]?.textContent?.trim();tiles.querySelectorAll('.bpp-tile').forEach(b=>{const label=b.textContent.trim();const isActive=(active==='ประชาสัมพันธ์'&&label.includes('ข่าวประชาสัมพันธ์'))||(active==='ออกแบบ'&&label.includes('ออกแบบ'))||(active==='วิดีโอ'&&label.includes('วิดีโอ'))||(active==='รายงาน'&&label.includes('รายงาน'))||(active==='นำเสนอ'&&label.includes('สไลด์'))||(active==='การเรียนรู้'&&label.includes('การเรียนรู้'));b.classList.toggle('bpp-tile-active',isActive);b.setAttribute('aria-pressed',String(isActive))})};const observer=new MutationObserver(syncTile);observer.observe(filters,{childList:true});syncTile();}
+})();
