@@ -1,0 +1,17 @@
+/* Final mobile readability refinements, no content changes */
+:root{--bpp-focus:#6335bf}
+.card{margin-bottom:23px!important;padding:clamp(18px,3vw,26px)!important;box-shadow:0 11px 24px #4a548447,-4px -4px 14px #ffffffc7!important}
+.card h2{line-height:1.4;overflow-wrap:anywhere}
+.card .desc{line-height:1.7}
+.card .levels{gap:10px}
+.card .levels button{min-height:44px;line-height:1.35}
+.card .prompt{font-size:clamp(14px,2.3vw,16px);line-height:1.8;max-height:550px;overflow:auto;overscroll-behavior:contain}
+.card .copy{min-height:52px;font-size:clamp(16px,2.6vw,19px)}
+.bpp-tile{transition:transform .18s ease,box-shadow .18s ease}
+.bpp-tile:active{transform:scale(.98)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--bpp-focus);outline-offset:3px}
+#cards,#bpp-categories{scroll-margin-top:20px}
+.meta{font-weight:650;line-height:1.6}
+.notice{max-width:850px;margin:20px auto;line-height:1.75}
+@media(max-width:600px){.card{margin-bottom:19px!important}.card .levels{display:grid;grid-template-columns:1fr}.card .levels button{width:100%;text-align:center}.card .prompt{max-height:420px}.bpp-tile strong{font-size:14px}.bpp-tiles{gap:14px}.notice{font-size:14px}.bpp-community{margin-top:25px}}
+@media(prefers-reduced-motion:reduce){.bpp-tile{transition:none}}
