@@ -1,0 +1,10 @@
+/* Official uploaded logos, no image recreation */
+.bpp-official-header{display:flex;align-items:center;gap:15px;max-width:1150px;margin:auto}
+.bpp-official-logos{display:flex;align-items:center;gap:9px;flex:none}
+.bpp-official-logos img{width:65px;height:65px;object-fit:contain;background:#fff;border-radius:12px;padding:4px;box-shadow:0 5px 12px #060d3766}
+.bpp-official-logos img:first-child{width:85px;object-fit:contain}
+.bpp-official-title{min-width:0}
+header .bpp-official-title>div:first-child{font-size:clamp(12px,1.7vw,16px);font-weight:700;opacity:.96}
+header .bpp-official-title h1{margin:3px 0!important;line-height:1.25;overflow-wrap:anywhere}
+@media(max-width:600px){.bpp-official-header{gap:9px}.bpp-official-logos{gap:5px}.bpp-official-logos img{width:41px;height:45px;padding:3px;border-radius:7px}.bpp-official-logos img:first-child{width:52px}.bpp-official-title h1{font-size:clamp(14px,3.6vw,18px)!important}.bpp-official-title h1 small{white-space:nowrap}}
+@media(max-width:360px){.bpp-official-logos img{width:34px;height:38px}.bpp-official-logos img:first-child{width:42px}.bpp-official-title h1{font-size:13px!important}}
